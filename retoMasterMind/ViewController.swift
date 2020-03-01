@@ -36,14 +36,21 @@ class ViewController: UIViewController {
     }
     
     func showAlert(){ //warning when two colors duplicate
-           let alert = UIAlertController(title: "Error", message: "No se puede jugar con dos colores del mismo color", preferredStyle: .alert)
+           let alert = UIAlertController(title: "ERROR", message: "No se puede jugar con colores repetidos", preferredStyle: .alert)
            let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
            alert.addAction(action)
            present(alert, animated: true, completion: nil)
     }
     
     func showAlertWinning(){
-            
+        let alert = UIAlertController(title: "GANASTE", message: "¿Quieres jugar de nuevo?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Sí", style: .default, handler: {(action) in alert.dismiss(animated: true, completion: nil)
+            print("Sí")
+        }))
+        alert.addAction(UIAlertAction(title: "No", style: .default, handler: {(action) in alert.dismiss(animated: true, completion: nil)
+            print("No")
+        }))
+        self.present(alert, animated: true,completion: nil)
     }
     
     func checkDuplicateColors() -> Bool { //check if two buttons duplicate colors
@@ -123,6 +130,7 @@ class ViewController: UIViewController {
             print(pos,col)
             if pos == 4 && col == 0 {
                 print("ya ganaste")
+                showAlertWinning()
             }else{
                 shuffleRedWhite(position: &pos, color: &col)
             }
