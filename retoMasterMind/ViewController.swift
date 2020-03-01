@@ -15,12 +15,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var btIniciar: UIButton!
     @IBOutlet weak var btProbar: UIButton!
     @IBOutlet var colorViews: [UIView]! //array of views
-
+    @IBOutlet var redWhiteViews: [UIView]!
     
     let colorArray = [UIColor.green, UIColor.blue, UIColor.yellow, UIColor.cyan, UIColor.orange, UIColor.magenta] //array of colors
     var indexesColors = [0,1,2,3,4,5] //array of numbers
+    var indexColor = 0 //index for moving on array of colors
+    var counter = 0
     
-    func randomBegin(){ //shuffle initial colors of views
+    func randomBegin(){ //shuffle initial colors of views and buttons
         indexesColors.shuffle()
         colorViews[0].backgroundColor = colorArray[indexesColors[0]]
         colorViews[1].backgroundColor = colorArray[indexesColors[1]]
@@ -38,6 +40,10 @@ class ViewController: UIViewController {
            let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
            alert.addAction(action)
            present(alert, animated: true, completion: nil)
+    }
+    
+    func showAlertWinning(){
+            
     }
     
     func checkDuplicateColors() -> Bool { //check if two buttons duplicate colors
@@ -76,7 +82,6 @@ class ViewController: UIViewController {
     }
    
     //all buttons share the same action
-    var indexColor = 0
     @IBAction func changeBackground(_ sender: UIButton) {
         if indexColor == colorArray.count{
             indexColor = 0 //point to the beginning of array
@@ -89,8 +94,7 @@ class ViewController: UIViewController {
         }
     }
     
-    var counter = 0 //counter of attemps before winning
-    @IBAction func jugando(_ sender: Any) {
+    @IBAction func jugando(_ sender: UIButton) {
         if checkDuplicateColors() {
             showAlert()
         }else{
@@ -100,7 +104,15 @@ class ViewController: UIViewController {
             print(pos,color)
             if pos == 4 && color == 0 {
                 print("ya ganaste")
+            }else{
+                
             }
         }
     }
+    
+    @IBAction func resetGame(_ sender: UIButton) {
+        randomBegin()
+        counter = 0
+    }
+    
 }

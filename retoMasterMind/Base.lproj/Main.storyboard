@@ -63,6 +63,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Iniciar"/>
+                                <connections>
+                                    <action selector="resetGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jAN-yw-yG9"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gI2-OM-0Fm">
                                 <rect key="frame" x="269" y="592" width="63" height="39"/>
@@ -142,6 +145,10 @@
                         <outletCollection property="colorViews" destination="xjZ-5G-TNL" collectionClass="NSMutableArray" id="wWN-IH-Ouk"/>
                         <outletCollection property="colorViews" destination="iu9-jY-qsS" collectionClass="NSMutableArray" id="BjZ-HN-cbd"/>
                         <outletCollection property="colorViews" destination="0hx-bK-vva" collectionClass="NSMutableArray" id="YOT-YG-zZt"/>
+                        <outletCollection property="redWhiteViews" destination="LaG-Jp-URj" collectionClass="NSMutableArray" id="E2L-pT-nec"/>
+                        <outletCollection property="redWhiteViews" destination="jz8-j3-akC" collectionClass="NSMutableArray" id="82f-qe-ESm"/>
+                        <outletCollection property="redWhiteViews" destination="Erp-bu-ceS" collectionClass="NSMutableArray" id="hbR-Sx-mKR"/>
+                        <outletCollection property="redWhiteViews" destination="qu1-HA-Mvr" collectionClass="NSMutableArray" id="Ehi-og-Msy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
