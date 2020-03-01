@@ -44,10 +44,6 @@ class ViewController: UIViewController {
         return colorButtons[0].backgroundColor == colorButtons[1].backgroundColor || colorButtons[0].backgroundColor == colorButtons[2].backgroundColor || colorButtons[0].backgroundColor == colorButtons[3].backgroundColor || colorButtons[1].backgroundColor == colorButtons[2].backgroundColor || colorButtons[1].backgroundColor == colorButtons[3].backgroundColor || colorButtons[2].backgroundColor == colorButtons[3].backgroundColor
     }
     
-   func checkWinGame() -> Bool { //check proper color matching between miniViews and buttons
-        return colorViews[0].backgroundColor == colorButtons[0].backgroundColor && colorViews[1].backgroundColor == colorButtons[1] && colorViews[2].backgroundColor == colorButtons[2].backgroundColor && colorViews[3].backgroundColor == colorButtons[3].backgroundColor
-    }
-    
     func checkRight () -> (Int,Int) {
         var (rightColors, rightPosition, i) = (0,0,0)
         for button in colorButtons {
@@ -97,13 +93,14 @@ class ViewController: UIViewController {
     @IBAction func jugando(_ sender: Any) {
         if checkDuplicateColors() {
             showAlert()
-        }else if checkWinGame(){
-            print("ya ganaste")
         }else{
             var (pos,color) : (Int, Int)
             counter += 1
             (pos,color) = checkRight()
             print(pos,color)
+            if pos == 4 && color == 0 {
+                print("ya ganaste")
+            }
         }
     }
 }
