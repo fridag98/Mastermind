@@ -67,6 +67,25 @@ class ViewController: UIViewController {
         }
         return (rightPosition, rightColors)
     }
+    
+    //paint red and white views and then shuffle them
+    func shuffleRedWhite( position: inout Int, color: inout Int) {
+        for view in redWhiteViews{
+            view.backgroundColor = .clear
+        }
+        var redWhite = 0 //index to color red and white squares
+        while position > 0 {
+            redWhiteViews[redWhite].backgroundColor = UIColor.red
+            redWhite+=1
+            position-=1
+        }
+        while color > 0 {
+            redWhiteViews[redWhite].backgroundColor = UIColor.white
+            redWhite+=1
+            color-=1
+        }
+        redWhiteViews.shuffle()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -98,14 +117,14 @@ class ViewController: UIViewController {
         if checkDuplicateColors() {
             showAlert()
         }else{
-            var (pos,color) : (Int, Int)
+            var (pos,col) : (Int, Int)
             counter += 1
-            (pos,color) = checkRight()
-            print(pos,color)
-            if pos == 4 && color == 0 {
+            (pos,col) = checkRight()
+            print(pos,col)
+            if pos == 4 && col == 0 {
                 print("ya ganaste")
             }else{
-                
+                shuffleRedWhite(position: &pos, color: &col)
             }
         }
     }
@@ -114,5 +133,4 @@ class ViewController: UIViewController {
         randomBegin()
         counter = 0
     }
-    
 }
