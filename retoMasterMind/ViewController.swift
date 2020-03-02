@@ -10,29 +10,28 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var viewButtons: UIView!
+    @IBOutlet weak var viewButtons: UIView! //container of mini views
     @IBOutlet var colorButtons: [UIButton]! //array of buttons
     @IBOutlet weak var btIniciar: UIButton!
     @IBOutlet weak var btProbar: UIButton!
-    @IBOutlet var colorViews: [UIView]! //array of views
+    @IBOutlet var colorViews: [UIView]! //array of mini views
     @IBOutlet var redWhiteViews: [UIView]!
     
-    let colorArray = [UIColor.green, UIColor.blue, UIColor.yellow, UIColor.cyan, UIColor.orange, UIColor.magenta] //array of colors
-    var indexesColors = [0,1,2,3,4,5] //array of numbers
-    var indexColor = 0 //index for moving on array of colors
-    var counter = 0
+    var colorArray = [UIColor.green, UIColor.blue, UIColor.yellow, UIColor.cyan, UIColor.orange, UIColor.magenta] //array of 6 colors
+  //  var indexesColors = [0,1,2,3,4,5] //array of numbers representing
+    var indexColor = 0 //pointer to move on array of colors
+    var counter = 0 //counter for attempts before winning
     
     func randomBegin(){ //shuffle initial colors of views and buttons
-        indexesColors.shuffle()
-        colorViews[0].backgroundColor = colorArray[indexesColors[0]]
-        colorViews[1].backgroundColor = colorArray[indexesColors[1]]
-        colorViews[2].backgroundColor = colorArray[indexesColors[2]]
-        colorViews[3].backgroundColor = colorArray[indexesColors[3]]
-        
-        colorButtons[0].backgroundColor = colorArray[indexesColors[4]]
-        colorButtons[1].backgroundColor = colorArray[indexesColors[5]]
-        colorButtons[2].backgroundColor = colorArray[indexesColors[0]]
-        colorButtons[3].backgroundColor = colorArray[indexesColors[1]]
+        colorArray.shuffle()
+        colorViews[0].backgroundColor = colorArray[0]
+        colorViews[1].backgroundColor = colorArray[1]
+        colorViews[2].backgroundColor = colorArray[2]
+        colorViews[3].backgroundColor = colorArray[3]
+        colorButtons[0].backgroundColor = colorArray[4]
+        colorButtons[1].backgroundColor = colorArray[0]
+        colorButtons[2].backgroundColor = colorArray[5]
+        colorButtons[3].backgroundColor = colorArray[1]
     }
     
     func showAlert(){ //warning when two colors duplicate
@@ -42,22 +41,20 @@ class ViewController: UIViewController {
            present(alert, animated: true, completion: nil)
     }
     
-    func showAlertWinning(){
-        let alert = UIAlertController(title: "GANASTE", message: "¿Quieres jugar de nuevo?", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Sí", style: .default, handler: {(action) in alert.dismiss(animated: true, completion: nil)
-            print("Sí")
+    func showAlertWinning(attempts: Int){ //warning when winning, choose to play again or not
+        let alert = UIAlertController(title: "GANASTE \n Te tomó \(attempts) intentos!", message: "¿Quieres jugar de nuevo?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Sí", style: .default, handler: {(action) in self.resetGame()
         }))
-        alert.addAction(UIAlertAction(title: "No", style: .default, handler: {(action) in alert.dismiss(animated: true, completion: nil)
-            print("No")
-        }))
-        self.present(alert, animated: true,completion: nil)
+        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
     func checkDuplicateColors() -> Bool { //check if two buttons duplicate colors
         return colorButtons[0].backgroundColor == colorButtons[1].backgroundColor || colorButtons[0].backgroundColor == colorButtons[2].backgroundColor || colorButtons[0].backgroundColor == colorButtons[3].backgroundColor || colorButtons[1].backgroundColor == colorButtons[2].backgroundColor || colorButtons[1].backgroundColor == colorButtons[3].backgroundColor || colorButtons[2].backgroundColor == colorButtons[3].backgroundColor
     }
     
-    func checkRight () -> (Int,Int) {
+    
+    func checkRight () -> (Int,Int) { //check buttons in right color position or buttons with right color but wrong position
         var (rightColors, rightPosition, i) = (0,0,0)
         for button in colorButtons {
             if button.backgroundColor == colorViews[i].backgroundColor{
@@ -93,6 +90,14 @@ class ViewController: UIViewController {
         }
         redWhiteViews.shuffle()
     }
+    
+    func resetGame() { //clear variables
+        for view in redWhiteViews{
+            view.backgroundColor = .clear
+        }
+        randomBegin()
+        counter = 0
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -107,6 +112,9 @@ class ViewController: UIViewController {
         }
     }
    
+    func historailIntentos (){
+        
+    }
     //all buttons share the same action
     @IBAction func changeBackground(_ sender: UIButton) {
         if indexColor == colorArray.count{
@@ -127,18 +135,15 @@ class ViewController: UIViewController {
             var (pos,col) : (Int, Int)
             counter += 1
             (pos,col) = checkRight()
-            print(pos,col)
             if pos == 4 && col == 0 {
-                print("ya ganaste")
-                showAlertWinning()
+                showAlertWinning(attempts: counter)
             }else{
                 shuffleRedWhite(position: &pos, color: &col)
             }
         }
     }
     
-    @IBAction func resetGame(_ sender: UIButton) {
-        randomBegin()
-        counter = 0
+    @IBAction func btClearGame(_ sender: UIButton) {
+        resetGame()
     }
 }
