@@ -122,11 +122,10 @@ class ViewController: UIViewController {
         let hist = (contador-fast)*4 //where to start
         let inicial = hist
         for i in hist...hist+3 {
-            print(i)
             historial[i].backgroundColor = colorButtons[i-inicial].backgroundColor
         }
-        if contador%4==0{ //to restart
-          fast+=4
+        if contador%5==0{ //to restart
+          fast+=5
         }
     }
     
