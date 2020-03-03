@@ -16,11 +16,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var btProbar: UIButton!
     @IBOutlet var colorViews: [UIView]! //array of mini views
     @IBOutlet var redWhiteViews: [UIView]!
+    @IBOutlet var historial: [UIView]! //array of historial
     
     var colorArray = [UIColor.green, UIColor.blue, UIColor.yellow, UIColor.cyan, UIColor.orange, UIColor.magenta] //array of 6 colors
   //  var indexesColors = [0,1,2,3,4,5] //array of numbers representing
     var indexColor = 0 //pointer to move on array of colors
-    var counter = 0 //counter for attempts before winning
+    var (counter,fast) = (0,1) //counter for attempts before winning
+    //var historial: [[UIView]] = [] //matrix to show attempts
     
     func randomBegin(){ //shuffle initial colors of views and buttons
         colorArray.shuffle()
@@ -95,8 +97,11 @@ class ViewController: UIViewController {
         for view in redWhiteViews{
             view.backgroundColor = .clear
         }
+        for history in historial{
+            history.backgroundColor = .clear
+        }
         randomBegin()
-        counter = 0
+        (counter,fast) = (0,1)
     }
 
     override func viewDidLoad() {
@@ -112,9 +117,19 @@ class ViewController: UIViewController {
         }
     }
    
-    func historailIntentos (){
+    func historialIntentos(botones:[UIButton], contador: Int) {
         
+        let hist = (contador-fast)*4 //where to start
+        let inicial = hist
+        for i in hist...hist+3 {
+            print(i)
+            historial[i].backgroundColor = colorButtons[i-inicial].backgroundColor
+        }
+        if contador%4==0{ //to restart
+          fast+=4
+        }
     }
+    
     //all buttons share the same action
     @IBAction func changeBackground(_ sender: UIButton) {
         if indexColor == colorArray.count{
@@ -139,6 +154,7 @@ class ViewController: UIViewController {
                 showAlertWinning(attempts: counter)
             }else{
                 shuffleRedWhite(position: &pos, color: &col)
+                historialIntentos(botones: historial as! [UIButton], contador: counter)
             }
         }
     }
