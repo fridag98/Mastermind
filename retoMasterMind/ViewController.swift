@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    
     @IBOutlet weak var viewButtons: UIView! //container of mini views
     @IBOutlet var colorButtons: [UIButton]! //array of buttons
     @IBOutlet weak var btIniciar: UIButton!
@@ -17,6 +18,7 @@ class ViewController: UIViewController {
     @IBOutlet var colorViews: [UIView]! //array of mini views
     @IBOutlet var redWhiteViews: [UIView]!
     @IBOutlet var historial: [UIView]! //array of historial
+    @IBOutlet var redWhiteHistorial: [UIView]!
     
     var colorArray = [UIColor.green, UIColor.blue, UIColor.yellow, UIColor.cyan, UIColor.orange, UIColor.magenta] //array of 6 colors
   //  var indexesColors = [0,1,2,3,4,5] //array of numbers representing
@@ -54,7 +56,6 @@ class ViewController: UIViewController {
     func checkDuplicateColors() -> Bool { //check if two buttons duplicate colors
         return colorButtons[0].backgroundColor == colorButtons[1].backgroundColor || colorButtons[0].backgroundColor == colorButtons[2].backgroundColor || colorButtons[0].backgroundColor == colorButtons[3].backgroundColor || colorButtons[1].backgroundColor == colorButtons[2].backgroundColor || colorButtons[1].backgroundColor == colorButtons[3].backgroundColor || colorButtons[2].backgroundColor == colorButtons[3].backgroundColor
     }
-    
     
     func checkRight () -> (Int,Int) { //check buttons in right color position or buttons with right color but wrong position
         var (rightColors, rightPosition, i) = (0,0,0)
@@ -100,6 +101,9 @@ class ViewController: UIViewController {
         for history in historial{
             history.backgroundColor = .clear
         }
+        for redWhite in redWhiteHistorial{
+            redWhite.backgroundColor = .clear
+        }
         randomBegin()
         (counter,fast) = (0,1)
     }
@@ -123,6 +127,7 @@ class ViewController: UIViewController {
         let inicial = hist
         for i in hist...hist+3 {
             historial[i].backgroundColor = colorButtons[i-inicial].backgroundColor
+            redWhiteHistorial[i].backgroundColor = redWhiteViews[i-inicial].backgroundColor
         }
         if contador%5==0{ //to restart
           fast+=5

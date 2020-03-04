@@ -126,83 +126,163 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
                             <view tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ek1-4d-Jgz">
-                                <rect key="frame" x="48" y="322" width="30" height="30"/>
+                                <rect key="frame" x="15" y="322" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
                             <view tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HPL-Za-B5Y">
-                                <rect key="frame" x="131" y="322" width="30" height="30"/>
+                                <rect key="frame" x="98" y="322" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
                             <view tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YKk-yg-lFL">
-                                <rect key="frame" x="215" y="322" width="30" height="30"/>
+                                <rect key="frame" x="182" y="322" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
                             <view tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CCn-Sc-aIl">
-                                <rect key="frame" x="297" y="322" width="30" height="30"/>
+                                <rect key="frame" x="264" y="322" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
                             <view tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CPr-HO-y5N">
-                                <rect key="frame" x="48" y="357" width="30" height="30"/>
+                                <rect key="frame" x="15" y="357" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
                             <view tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Va-qA-KhI">
-                                <rect key="frame" x="48" y="393" width="30" height="30"/>
+                                <rect key="frame" x="15" y="393" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
                             <view tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Pi-qg-Csh">
-                                <rect key="frame" x="48" y="429" width="30" height="30"/>
+                                <rect key="frame" x="15" y="429" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
                             <view tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9jd-xl-90p">
-                                <rect key="frame" x="48" y="466" width="30" height="30"/>
+                                <rect key="frame" x="15" y="466" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
                             <view tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S59-sI-QzX">
-                                <rect key="frame" x="131" y="357" width="30" height="30"/>
+                                <rect key="frame" x="98" y="357" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
                             <view tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Ar-Hr-Xsa">
-                                <rect key="frame" x="131" y="393" width="30" height="30"/>
+                                <rect key="frame" x="98" y="393" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
                             <view tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xf2-R8-oqH">
-                                <rect key="frame" x="131" y="429" width="30" height="30"/>
+                                <rect key="frame" x="98" y="429" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
                             <view tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n1h-Dh-nDG">
-                                <rect key="frame" x="131" y="466" width="30" height="30"/>
+                                <rect key="frame" x="98" y="466" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
                             <view tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tUU-LJ-Wwy">
-                                <rect key="frame" x="215" y="357" width="30" height="30"/>
+                                <rect key="frame" x="182" y="357" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
                             <view tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cHa-1l-L4W">
-                                <rect key="frame" x="215" y="393" width="30" height="30"/>
+                                <rect key="frame" x="182" y="393" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
                             <view tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PCO-ly-8NV">
-                                <rect key="frame" x="215" y="466" width="30" height="30"/>
+                                <rect key="frame" x="182" y="466" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
                             <view tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="857-xW-pJn">
-                                <rect key="frame" x="297" y="357" width="30" height="30"/>
+                                <rect key="frame" x="264" y="357" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
                             <view tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="njz-Al-3ZR">
-                                <rect key="frame" x="297" y="393" width="30" height="30"/>
+                                <rect key="frame" x="264" y="393" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
                             <view tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gcy-BT-HjV">
-                                <rect key="frame" x="297" y="429" width="30" height="30"/>
+                                <rect key="frame" x="264" y="429" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
                             <view tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LNi-q6-soN">
-                                <rect key="frame" x="297" y="466" width="30" height="30"/>
+                                <rect key="frame" x="264" y="466" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
                             <view tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="all-yD-c6n">
-                                <rect key="frame" x="215" y="429" width="30" height="30"/>
+                                <rect key="frame" x="182" y="429" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aqx-UT-IWf">
+                                <rect key="frame" x="321" y="324" width="11" height="11"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="guM-SL-vG5">
+                                <rect key="frame" x="338" y="324" width="11" height="11"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ED7-Mx-ain">
+                                <rect key="frame" x="321" y="340" width="11" height="11"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="33F-cQ-aw0">
+                                <rect key="frame" x="338" y="340" width="11" height="11"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EmN-fU-Ub9">
+                                <rect key="frame" x="321" y="359" width="11" height="11"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZUD-sl-ujh">
+                                <rect key="frame" x="338" y="359" width="11" height="11"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XTa-KH-rlN">
+                                <rect key="frame" x="321" y="375" width="11" height="11"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uey-H3-Qua">
+                                <rect key="frame" x="338" y="375" width="11" height="11"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SMm-Cq-no7">
+                                <rect key="frame" x="321" y="394" width="11" height="11"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ITm-S9-1TT">
+                                <rect key="frame" x="338" y="394" width="11" height="11"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qhc-Xc-IKf">
+                                <rect key="frame" x="321" y="410" width="11" height="11"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iJ7-qu-7iR">
+                                <rect key="frame" x="338" y="410" width="11" height="11"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FAb-YT-QC9">
+                                <rect key="frame" x="321" y="431" width="11" height="11"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HhB-TG-RvB">
+                                <rect key="frame" x="338" y="431" width="11" height="11"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v9P-gn-gJH">
+                                <rect key="frame" x="321" y="447" width="11" height="11"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G3O-bq-0gd">
+                                <rect key="frame" x="338" y="447" width="11" height="11"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2pB-YR-6I1">
+                                <rect key="frame" x="321" y="468" width="11" height="11"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hDK-cA-WAb">
+                                <rect key="frame" x="338" y="468" width="11" height="11"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FZl-tH-7RR">
+                                <rect key="frame" x="321" y="484" width="11" height="11"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c4r-qX-t6m">
+                                <rect key="frame" x="338" y="484" width="11" height="11"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
                         </subviews>
@@ -245,6 +325,26 @@
                         <outletCollection property="historial" destination="n1h-Dh-nDG" collectionClass="NSMutableArray" id="RrH-O6-HFj"/>
                         <outletCollection property="historial" destination="PCO-ly-8NV" collectionClass="NSMutableArray" id="fBe-tO-gAR"/>
                         <outletCollection property="historial" destination="LNi-q6-soN" collectionClass="NSMutableArray" id="T6X-Z7-Wgm"/>
+                        <outletCollection property="redWhiteHistorial" destination="aqx-UT-IWf" collectionClass="NSMutableArray" id="HzU-B1-4Sm"/>
+                        <outletCollection property="redWhiteHistorial" destination="guM-SL-vG5" collectionClass="NSMutableArray" id="sS9-cX-3u4"/>
+                        <outletCollection property="redWhiteHistorial" destination="ED7-Mx-ain" collectionClass="NSMutableArray" id="4uM-Cj-Nu7"/>
+                        <outletCollection property="redWhiteHistorial" destination="33F-cQ-aw0" collectionClass="NSMutableArray" id="cwW-cv-85E"/>
+                        <outletCollection property="redWhiteHistorial" destination="EmN-fU-Ub9" collectionClass="NSMutableArray" id="n4P-H7-MXI"/>
+                        <outletCollection property="redWhiteHistorial" destination="ZUD-sl-ujh" collectionClass="NSMutableArray" id="cR9-mb-jMR"/>
+                        <outletCollection property="redWhiteHistorial" destination="XTa-KH-rlN" collectionClass="NSMutableArray" id="edZ-c3-HyE"/>
+                        <outletCollection property="redWhiteHistorial" destination="Uey-H3-Qua" collectionClass="NSMutableArray" id="CfV-NZ-RqM"/>
+                        <outletCollection property="redWhiteHistorial" destination="SMm-Cq-no7" collectionClass="NSMutableArray" id="WWx-77-ZTX"/>
+                        <outletCollection property="redWhiteHistorial" destination="ITm-S9-1TT" collectionClass="NSMutableArray" id="7n7-ls-uyu"/>
+                        <outletCollection property="redWhiteHistorial" destination="Qhc-Xc-IKf" collectionClass="NSMutableArray" id="LEo-D4-kYZ"/>
+                        <outletCollection property="redWhiteHistorial" destination="iJ7-qu-7iR" collectionClass="NSMutableArray" id="8Qm-4r-WBI"/>
+                        <outletCollection property="redWhiteHistorial" destination="FAb-YT-QC9" collectionClass="NSMutableArray" id="P3G-Yt-SWO"/>
+                        <outletCollection property="redWhiteHistorial" destination="HhB-TG-RvB" collectionClass="NSMutableArray" id="Qbl-BM-qRv"/>
+                        <outletCollection property="redWhiteHistorial" destination="v9P-gn-gJH" collectionClass="NSMutableArray" id="KQp-Aj-Hl4"/>
+                        <outletCollection property="redWhiteHistorial" destination="G3O-bq-0gd" collectionClass="NSMutableArray" id="Jv7-Xs-INY"/>
+                        <outletCollection property="redWhiteHistorial" destination="2pB-YR-6I1" collectionClass="NSMutableArray" id="Nuf-9Q-oW4"/>
+                        <outletCollection property="redWhiteHistorial" destination="hDK-cA-WAb" collectionClass="NSMutableArray" id="Hkr-pl-YXi"/>
+                        <outletCollection property="redWhiteHistorial" destination="FZl-tH-7RR" collectionClass="NSMutableArray" id="JWY-1H-ncJ"/>
+                        <outletCollection property="redWhiteHistorial" destination="c4r-qX-t6m" collectionClass="NSMutableArray" id="CK7-KA-0lI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
