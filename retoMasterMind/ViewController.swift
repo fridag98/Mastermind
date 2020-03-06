@@ -10,32 +10,36 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    
-    @IBOutlet weak var viewButtons: UIView! //container of mini views
+    @IBOutlet weak var viewButtons: UIView! //container holding mini views
     @IBOutlet var colorButtons: [UIButton]! //array of buttons
-    @IBOutlet weak var btIniciar: UIButton!
-    @IBOutlet weak var btProbar: UIButton!
+    @IBOutlet weak var btIniciar: UIButton! //button for reset game
+    @IBOutlet weak var btProbar: UIButton! //button for trial
     @IBOutlet var colorViews: [UIView]! //array of mini views
-    @IBOutlet var redWhiteViews: [UIView]!
-    @IBOutlet var historial: [UIView]! //array of historial
-    @IBOutlet var redWhiteHistorial: [UIView]!
+    @IBOutlet var redWhiteViews: [UIView]! //array of whiteRed views
+    @IBOutlet var historial: [UIView]! //array of colors history
+    @IBOutlet var redWhiteHistorial: [UIView]! //array redWhite history
     
     var colorArray = [UIColor.green, UIColor.blue, UIColor.yellow, UIColor.cyan, UIColor.orange, UIColor.magenta] //array of 6 colors
-  //  var indexesColors = [0,1,2,3,4,5] //array of numbers representing
     var indexColor = 0 //pointer to move on array of colors
-    var (counter,fast) = (0,1) //counter for attempts before winning
-    //var historial: [[UIView]] = [] //matrix to show attempts
+    var counter = 0//counter for attempts
+    var (ganar,volverGanar,grises) = (false,false,false) //validations for alerts
     
-    func randomBegin(){ //shuffle initial colors of views and buttons
+    func randomBegin(){ //shuffle initial colors of mini views. Start buttons with default color gray
         colorArray.shuffle()
         colorViews[0].backgroundColor = colorArray[0]
         colorViews[1].backgroundColor = colorArray[1]
         colorViews[2].backgroundColor = colorArray[2]
         colorViews[3].backgroundColor = colorArray[3]
-        colorButtons[0].backgroundColor = colorArray[4]
-        colorButtons[1].backgroundColor = colorArray[0]
-        colorButtons[2].backgroundColor = colorArray[5]
-        colorButtons[3].backgroundColor = colorArray[1]
+        for button in colorButtons{
+            button.backgroundColor = UIColor.darkGray
+        }
+    }
+    
+    func showAlertIntentos(){ //warning telling user the amount of possible trials before losing
+        let alert = UIAlertController(title: "ATENCIÓN", message: "Tienes 8 intentos para decifrar y ganar \n Da click en los cuadros grises para elegir un color.", preferredStyle: .alert)
+              let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+              alert.addAction(action)
+              present(alert, animated: true, completion: nil)
     }
     
     func showAlert(){ //warning when two colors duplicate
@@ -45,8 +49,32 @@ class ViewController: UIViewController {
            present(alert, animated: true, completion: nil)
     }
     
-    func showAlertWinning(attempts: Int){ //warning when winning, choose to play again or not
-        let alert = UIAlertController(title: "GANASTE \n Te tomó \(attempts) intentos!", message: "¿Quieres jugar de nuevo?", preferredStyle: .alert)
+    func showAlertJugarConGris(){//warning when not choosing a color for the buttons
+        let alert = UIAlertController(title: "ERROR", message: "Elige un color para todos los cuadros.", preferredStyle: .alert)
+         let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+         alert.addAction(action)
+         present(alert, animated: true, completion: nil)
+    }
+    
+    func showAlertWinning(attempts: Int){ //warning when winning. Also to tell user to restart the game whenever he wons and decides not to start a new game but still clicks on the 'probar' button
+        var (mensajeUno, mensajeDos) : (String?, String?)
+            if(volverGanar){
+                mensajeUno = "INICIA JUEGO NUEVO"
+                mensajeDos = "Ya ganaste. \n ¿Quieres jugar de nuevo?"
+            }else{
+                mensajeUno = "GANASTE \n Te tomó \(attempts) intentos!"
+                mensajeDos = "¿Quieres jugar de nuevo?"
+            }
+        let alert = UIAlertController(title: mensajeUno, message: mensajeDos, preferredStyle: .alert)
+
+        alert.addAction(UIAlertAction(title: "Sí", style: .default, handler: {(action) in self.resetGame()
+        }))
+        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func showAlertLosing(){ //warning when user exceeds the 8 attempts avaialble to win
+        let alert = UIAlertController(title: "PERDISTE!", message: "Excediste el número de intentos \n ¿Quieres jugar de nuevo?", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Sí", style: .default, handler: {(action) in self.resetGame()
         }))
         alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
@@ -55,6 +83,15 @@ class ViewController: UIViewController {
     
     func checkDuplicateColors() -> Bool { //check if two buttons duplicate colors
         return colorButtons[0].backgroundColor == colorButtons[1].backgroundColor || colorButtons[0].backgroundColor == colorButtons[2].backgroundColor || colorButtons[0].backgroundColor == colorButtons[3].backgroundColor || colorButtons[1].backgroundColor == colorButtons[2].backgroundColor || colorButtons[1].backgroundColor == colorButtons[3].backgroundColor || colorButtons[2].backgroundColor == colorButtons[3].backgroundColor
+    }
+    
+    func checkDefaultColor() -> Bool { //check if a button hasn't a color applied to it
+        for button in colorButtons{
+            if button.backgroundColor == UIColor.darkGray{
+                grises = true
+            }
+        }
+        return grises
     }
     
     func checkRight () -> (Int,Int) { //check buttons in right color position or buttons with right color but wrong position
@@ -94,7 +131,9 @@ class ViewController: UIViewController {
         redWhiteViews.shuffle()
     }
     
-    func resetGame() { //clear variables
+    func resetGame() {//clear variables
+        counter = 0
+        (ganar,volverGanar,grises) = (false,false,false)
         for view in redWhiteViews{
             view.backgroundColor = .clear
         }
@@ -105,37 +144,39 @@ class ViewController: UIViewController {
             redWhite.backgroundColor = .clear
         }
         randomBegin()
-        (counter,fast) = (0,1)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         randomBegin()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        showAlertIntentos()
+    }
 
-    @IBAction func segmentControl(_ sender: UISegmentedControl) {
+    @IBAction func segmentControl(_ sender: UISegmentedControl) {//hide or unhide views on segment choice. New game when segment choice changes
         if sender.selectedSegmentIndex == 0{
+            resetGame()
             viewButtons.isHidden = true
         }else{
+            resetGame()
             viewButtons.isHidden = false
         }
     }
    
-    func historialIntentos(botones:[UIButton], contador: Int) {
+    func historialIntentos(botones:[UIButton], contador: Int) {//show historial of button colors and redWhite views
         
-        let hist = (contador-fast)*4 //where to start
+        let hist = (contador-1)*4 //where to start
         let inicial = hist
         for i in hist...hist+3 {
             historial[i].backgroundColor = colorButtons[i-inicial].backgroundColor
             redWhiteHistorial[i].backgroundColor = redWhiteViews[i-inicial].backgroundColor
         }
-        if contador%5==0{ //to restart
-          fast+=5
-        }
     }
     
     //all buttons share the same action
-    @IBAction func changeBackground(_ sender: UIButton) {
+    @IBAction func changeBackground(_ sender: UIButton) {//change color of buttons
         if indexColor == colorArray.count{
             indexColor = 0 //point to the beginning of array
         }
@@ -148,22 +189,37 @@ class ViewController: UIViewController {
     }
     
     @IBAction func jugando(_ sender: UIButton) {
-        if checkDuplicateColors() {
-            showAlert()
+        if checkDefaultColor() { //buttons with no colors assigns
+            showAlertJugarConGris()
+            grises = false
         }else{
-            var (pos,col) : (Int, Int)
-            counter += 1
-            (pos,col) = checkRight()
-            if pos == 4 && col == 0 {
-                showAlertWinning(attempts: counter)
+            if checkDuplicateColors() { //buttons with duplicate colors
+                showAlert()
             }else{
-                shuffleRedWhite(position: &pos, color: &col)
-                historialIntentos(botones: historial as! [UIButton], contador: counter)
+                var (pos,col) : (Int, Int)
+                counter += 1
+                (pos,col) = checkRight()
+                if pos == 4 && col == 0 { //user has won
+                    ganar = true
+                    showAlertWinning(attempts: counter)
+                    volverGanar = true
+                }else{
+                    if(ganar){//user had won, didn't restart game and still clicks the 'probar' button
+                        showAlertWinning(attempts: counter)
+                    }else{
+                        if counter >= 8 { //user exceeds the attempts of trials
+                            showAlertLosing()
+                        }else{ //show historial, user still has attemps available to win
+                            shuffleRedWhite(position: &pos, color: &col)
+                            historialIntentos(botones: historial as! [UIButton], contador: counter)
+                        }
+                    }
+                }
             }
         }
     }
     
-    @IBAction func btClearGame(_ sender: UIButton) {
+    @IBAction func btClearGame(_ sender: UIButton) {//start new game when 'iniciar' button is clicked
         resetGame()
     }
 }
